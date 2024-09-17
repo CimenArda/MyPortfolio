@@ -1,0 +1,21 @@
+﻿@model MyPortfolio.Models.Skill
+@{
+    ViewBag.Title = "CreateSkill";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+
+
+<form method="post" class="form-group">
+
+    <label>Yetenek Başlığı</label>
+    <input type="text" name="Title" class="form-control" />
+    <br />
+    <label>Yetenek İkonu</label>
+    <input type="text" name="Icon" class="form-control" />
+    <br />
+    <label>Yetenek Değeri</label>
+    <input type="text" name="Value" class="form-control" />
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+</form>
