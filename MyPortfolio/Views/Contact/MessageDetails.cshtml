@@ -1,0 +1,31 @@
+﻿@model MyPortfolio.Models.Contact
+@{
+    ViewBag.Title = "MessageDetails";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h3>Mesaj Detayları</h3>
+
+<label>Gönderen Kişi</label>
+<input type="text" name="NameSurname" value="@Model.NameSurname" class="form-control" readonly />
+<br />
+<label>Gönderen E-Maili</label>
+<input type="text" name="Email" value="@Model.Email" class="form-control" readonly />
+<br />
+<label>Gönderen Telefon Numarası</label>
+<input type="text" name="PhoneNumber" value="@Model.PhoneNumber" class="form-control" readonly />
+<br />
+<label>Mesajın Kategorisi </label>
+<input type="text" name="CategoryID" value="@Model.Category.CategoryName" class="form-control" readonly />
+<br />
+
+<label>Mesajın Konusu</label>
+<input type="text" name="PhoneNumber" value="@Model.Subject" class="form-control" readonly />
+<br />
+<label>Mesaj İçeriği</label>
+@Html.TextAreaFor(x => x.MessageDetail, new { @class = "form-control", @readonly = "readonly" })
+<br />
+<label>Mesaj Gönderilme Tarihi</label>
+<input type="text" name="SendDate" value="@Model.SendDate" class="form-control" readonly />
+<br />
+
