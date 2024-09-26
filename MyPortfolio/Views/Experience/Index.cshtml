@@ -1,0 +1,33 @@
+﻿@using MyPortfolio.Models
+@model List<Experience>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<h2>Yeteneklerim Listesi</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Deneyim Numarası</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>Şirket Adı</th>
+        <th>Tarih</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+
+        <tr>
+            <td>@item.ExperienceID</td>
+            <td>@item.Title</td>
+            <td>@item.Description.Substring(0,5).ToString()....</td>
+            <td>@item.CompanyName</td>
+            <td>@item.WorkDate</td>
+            <td><a href="/Experience/DeleteExperience/@item.ExperienceID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Experience/UpdateExperience/@item.ExperienceID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Experience/CreateExperience/" class="btn btn-primary">Deneyim Ekle</a>

@@ -1,0 +1,39 @@
+﻿@model MyPortfolio.Models.Experience
+
+@{
+    ViewBag.Title = "UpdateExperience";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+
+<h2>Yetenek Güncelle</h2>
+<br />
+@using (Html.BeginForm("UpdateExperience", "Experience", FormMethod.Post))
+{
+    @Html.HiddenFor(y => y.ExperienceID, new { @class = "form-control" })
+
+    <div>
+
+        <label>Deneyim Başlığı</label>
+        @Html.TextBoxFor(y => y.Title, new { @class = "form-control" })
+
+    </div>
+    <div>
+        <label>Deneyim Açıklaması </label>
+        @Html.TextAreaFor(k => k.Description, 4, 1, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Deneyim Şirket Adı</label>
+        @Html.TextBoxFor(k => k.CompanyName, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Deneyim Çalışma Tarihi</label>
+        @Html.TextBoxFor(k => k.WorkDate, new { @class = "form-control" })
+    </div>
+
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+
+
+}
