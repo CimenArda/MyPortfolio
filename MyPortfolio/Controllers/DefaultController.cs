@@ -12,9 +12,24 @@ namespace MyPortfolio.Controllers
         MyPortfolioDbEntities context = new MyPortfolioDbEntities();
         public ActionResult Index()
         {
+            List<SelectListItem> values =(from x in context.Category.ToList() select new SelectListItem
+            {
+               Text=x.CategoryName,
+               Value=x.CategoryID.ToString()
+            }).ToList();
+
+            ViewBag.category =values;
             return View();
         }
-
+        [HttpPost]
+        public ActionResult Index(Contact c)
+        {
+            c.SendDate =DateTime.Parse(DateTime.Now.ToShortDateString());
+            c.IsRead = false;
+            context.Contact.Add(c);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
         public PartialViewResult PartialHead()
         {
             return PartialView();
@@ -71,7 +86,9 @@ namespace MyPortfolio.Controllers
 
         public PartialViewResult PartialSkill()
         {
-            return PartialView();
+            var values = context.Skill.ToList();
+
+            return PartialView(values);
         }
 
         public PartialViewResult PartialService()
@@ -97,7 +114,8 @@ namespace MyPortfolio.Controllers
 
         public PartialViewResult PartialFooter()
         {
-            return PartialView();
+            var values = context.SocialMedia.Where(x=>x.Status==true).ToList();
+            return PartialView(values);
         }
 
         public PartialViewResult PartialScript()
