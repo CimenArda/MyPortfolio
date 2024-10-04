@@ -8,30 +8,24 @@
 
 <h2>Yetenek Güncelle</h2>
 <br />
-@using (Html.BeginForm("CreateExperience", "Experience", FormMethod.Post))
-{
+<form action="/Experience/CreateExperience" method="post">
     <div>
-
         <label>Deneyim Başlığı</label>
-        @Html.TextBoxFor(y => y.Title, new { @class = "form-control" })
-
+        <input type="text" required name="Title" class="form-control"  />
     </div>
     <div>
-        <label>Deneyim Açıklaması </label>
-        @Html.TextAreaFor(k => k.Description, 4, 1, new { @class = "form-control" })
+        <label>Deneyim Açıklaması</label>
+        <textarea name="Description" minlength="5" rows="4" class="form-control"></textarea>
     </div>
-
     <div>
         <label>Deneyim Şirket Adı</label>
-        @Html.TextBoxFor(k => k.CompanyName, new { @class = "form-control" })
+        <input type="text" name="CompanyName" maxlength="20" required class="form-control"  />
     </div>
     <div>
         <label>Deneyim Çalışma Tarihi</label>
-        @Html.TextBoxFor(k => k.WorkDate, new { @class = "form-control" })
+        <input type="text" name="WorkDate" maxlength="10" class="form-control"  />
     </div>
 
     <br />
-    <button class="btn btn-success">Ekle</button>
-
-
-}
+    <button type="submit" class="btn btn-success">Ekle</button>
+</form>

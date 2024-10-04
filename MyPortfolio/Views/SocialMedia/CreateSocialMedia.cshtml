@@ -1,0 +1,23 @@
+﻿@model MyPortfolio.Models.SocialMedia
+
+@{
+    ViewBag.Title = "CreateSocialMedia";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Yetenek Güncelle</h2>
+<br />
+<form action="/SocialMedia/CreateSocialMedia" method="post">
+    <div>
+        <label>Sosyal Medya Başlığı</label>
+        <input type="text" required name="Title" class="form-control" />
+    </div>
+    <div>
+        <label>Sosyal Medya İkonu</label>
+        <input type="text" name="Icon"  required class="form-control" />
+    </div>
+    
+
+    <br />
+    <button type="submit" class="btn btn-success">Ekle</button>
+</form>

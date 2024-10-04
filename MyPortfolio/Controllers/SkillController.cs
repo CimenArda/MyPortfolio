@@ -1,4 +1,5 @@
 ﻿using MyPortfolio.Models;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,9 @@ namespace MyPortfolio.Controllers
     {
         MyPortfolioDbEntities context =new MyPortfolioDbEntities();
 
-        public ActionResult SkillList()
+        public ActionResult SkillList(int sayfa=1)
         {
-            var values = context.Skill.ToList();
+            var values = context.Skill.ToList().ToPagedList(sayfa, 5);
             return View(values);
         }
 

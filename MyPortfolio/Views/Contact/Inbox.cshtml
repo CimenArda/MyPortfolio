@@ -25,7 +25,29 @@
             <td>@item.MessageID</td>
             <td>@item.NameSurname</td>
             <td>@item.Subject</td>
-            <td>@item.Category.CategoryName</td>
+            <td>
+                @if (item.Category.CategoryName == "Proje Talebi")
+                {
+                    <span class="text-danger">@item.Category.CategoryName</span>
+                }
+                else if (item.Category.CategoryName == "Teşekkür")
+                {
+                    <span class="text-success">@item.Category.CategoryName</span>
+                }
+                else if (item.Category.CategoryName == "Öneri")
+                {
+                    <span class="text-info">@item.Category.CategoryName</span>
+                }
+                else if (item.Category.CategoryName == "İstek")
+                {
+                    <span class="text-secondary">@item.Category.CategoryName</span>
+                }
+                else
+                {
+                    <span class="text-bg-primary">@item.Category.CategoryName</span>
+                }
+            </td>
+
             <td>@item.SendDate</td>
             @if (item.IsRead == false)
             {
