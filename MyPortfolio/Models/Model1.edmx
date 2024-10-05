@@ -94,7 +94,7 @@
           <Property Name="SkillID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="50" />
           <Property Name="Icon" Type="nvarchar" MaxLength="100" />
-          <Property Name="Value" Type="tinyint" />
+          <Property Name="Value" Type="int" />
           <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityType Name="SocialMedia">
@@ -254,7 +254,7 @@
           <Property Name="SkillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Icon" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Value" Type="Byte" />
+          <Property Name="Value" Type="Int32" />
           <Property Name="Status" Type="Boolean" />
         </EntityType>
         <EntityType Name="sysdiagrams">

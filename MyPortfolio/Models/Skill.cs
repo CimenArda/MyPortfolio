@@ -17,7 +17,7 @@ namespace MyPortfolio.Models
         public int SkillID { get; set; }
         public string Title { get; set; }
         public string Icon { get; set; }
-        public Nullable<byte> Value { get; set; }
+        public Nullable<int> Value { get; set; }
         public Nullable<bool> Status { get; set; }
     }
 }

@@ -1,0 +1,37 @@
+﻿@model List<MyPortfolio.Models.Skill>
+
+@{
+    ViewBag.Title = "SkillChart";
+    Layout = "~/Views/Admin/Index.cshtml"; 
+}
+
+<h2>Yetenek Grafiği</h2>
+
+<div id="chart_div"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', { packages: ['corechart', 'bar'] });
+    google.charts.setOnLoadCallback(drawStuff);
+
+    function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+            ['Yetenek', 'Değer'],
+            @foreach (var skill in Model)
+            {
+                @: ['@skill.Title', @skill.Value ?? 0], *
+            }
+        ]);
+
+        var options = {
+            title: 'Yetenek Grafiği',
+            width: 600,
+            height: 400,
+            legend: { position: 'none' },
+            bars: 'horizontal' *
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>

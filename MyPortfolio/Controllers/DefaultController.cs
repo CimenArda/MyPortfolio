@@ -80,7 +80,9 @@ namespace MyPortfolio.Controllers
 
         public PartialViewResult PartialExperience()
         {
-            return PartialView();
+            var values = context.Experience.ToList();
+
+            return PartialView(values);
         }
 
 
@@ -93,17 +95,23 @@ namespace MyPortfolio.Controllers
 
         public PartialViewResult PartialService()
         {
-            return PartialView();
+            var values = context.Service.ToList();
+
+            return PartialView(values);
         }
 
         public PartialViewResult PartialPortfolio()
         {
-            return PartialView();
+            var values = context.Work.ToList();
+
+            return PartialView(values);
         }
 
         public PartialViewResult PartialTestimonial()
         {
-            return PartialView();
+            var values = context.Testimonial.ToList();
+
+            return PartialView(values);
         }
 
 

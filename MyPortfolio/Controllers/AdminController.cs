@@ -39,5 +39,18 @@ namespace MyPortfolio.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult CvIndir()
+        {
+            var filePath = Server.MapPath("~/Content/images/CvOrnek.jpg");
+            if (!System.IO.File.Exists(filePath))
+            {
+                return HttpNotFound("Dosya Bulunamadı");
+
+            }
+            var fileName = "CvOrnek.jpg";
+            var contentType = "image/jpeg";
+            return File(filePath,contentType,fileName); 
+        }
     }
 }

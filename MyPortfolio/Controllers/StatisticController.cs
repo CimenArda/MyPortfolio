@@ -17,8 +17,8 @@ namespace MyPortfolio.Controllers
           ViewBag.messageCountIsReadByTrue = context.Contact.Where(x=>x.IsRead==true).Count();
           ViewBag.messageCountIsReadByFalse = context.Contact.Where(x=>x.IsRead==false).Count();
           ViewBag.skillCount = context.Skill.Count();
-          ViewBag.totalSkillValue = context.Skill.Sum(x => x.Value);
-          ViewBag.averageSkillValue =context.Skill.Average(x => x.Value);
+          //ViewBag.totalSkillValue = context.Skill.Sum(x => x.Value);
+          //ViewBag.averageSkillValue =context.Skill.Average(x => x.Value);
           ViewBag.getEmailFromProfile = context.Profile.Select(x => x.Email).FirstOrDefault();
           int getlastCategoryId = context.Category.Max(x => x.CategoryID);
           ViewBag.getLastCategoryName =context.Category.Where(x=>x.CategoryID==getlastCategoryId).Select(x=>x.CategoryName).FirstOrDefault();
