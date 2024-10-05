@@ -1,0 +1,30 @@
+﻿@model MyPortfolio.Models.Education
+@{
+    ViewBag.Title = "CreateEducation";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Eğitim Ekle</h2>
+<br />
+<form action="/Education/CreateEducation" method="post">
+    <div>
+        <label>Eğitim Başlığı</label>
+        <input type="text" required name="Title" class="form-control" />
+    </div>
+
+    <div>
+        <label>Eğitim Alt Başlığı</label>
+        <input type="text" name="SubTitle"  required class="form-control" />
+    </div>
+    <div>
+        <label>Eğitim Tarihi</label>
+        <input type="text" name="EducationDate"  class="form-control" />
+    </div>
+    <div>
+        <label>Eğitim Açıklaması</label>
+        <input type="text" name="Description"  class="form-control" />
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-success">Ekle</button>
+</form>

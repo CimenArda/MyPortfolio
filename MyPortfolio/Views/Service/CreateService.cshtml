@@ -1,0 +1,28 @@
+﻿@model MyPortfolio.Models.Service
+
+@{
+    ViewBag.Title = "CreateService";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+
+<h2>Hizmetler Ekle</h2>
+<br />
+<form action="/Service/CreateService" method="post">
+    <div>
+        <label>Hizmet Başlığı</label>
+        <input type="text" required name="Title" class="form-control" />
+    </div>
+
+    <div>
+        <label>Açıklaması</label>
+        <input type="text" name="Description" required class="form-control" />
+    </div>
+    <div>
+        <label>Hizmet İkonu</label>
+        <input type="text" name="Icon" class="form-control" />
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-success">Ekle</button>
+</form>

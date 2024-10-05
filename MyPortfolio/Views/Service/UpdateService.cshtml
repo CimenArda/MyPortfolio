@@ -1,0 +1,32 @@
+﻿@model MyPortfolio.Models.Service
+@{
+    ViewBag.Title = "UpdateService";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+<h2>Yetenek Güncelle</h2>
+<br />
+@using (Html.BeginForm("UpdateService", "Service", FormMethod.Post))
+{
+    @Html.HiddenFor(y => y.ServiceID, new { @class = "form-control" })
+
+    <div>
+
+        <label>Hizmet Başlığı</label>
+        @Html.TextBoxFor(y => y.Title, new { @class = "form-control" })
+
+    </div>
+    <div>
+        <label>Hizmet Açıklaması</label>
+        @Html.TextBoxFor(k => k.Description, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Eğitim İkonu</label>
+        @Html.TextBoxFor(k => k.Icon, new { @class = "form-control" })
+    </div>
+
+
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+
+
+}

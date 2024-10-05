@@ -1,0 +1,30 @@
+﻿@model MyPortfolio.Models.Work
+
+@{
+    ViewBag.Title = "CreateWork";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Çalışma Ekle</h2>
+<br />
+<form action="/Work/CreateWork" method="post">
+
+    <div>
+        <label>Çalışma Başlığı</label>
+        <input type="text" name="Title" required class="form-control" />
+    </div>
+    <div>
+        <label>Çalışma Açıklaması</label>
+        <input type="text" required name="Description" class="form-control" />
+    </div>
+    <div>
+        <label>Çalışma Github Yolu</label>
+        <input type="text" name="GithubUrl" class="form-control" />
+    </div>
+    <div>
+        <label>Çalışma Resim Yolu</label>
+        <input type="text" name="ImageUrl" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success">Ekle</button>
+</form>

@@ -1,0 +1,37 @@
+﻿@model MyPortfolio.Models.Education
+
+@{
+    ViewBag.Title = "UpdateEducation";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Yetenek Güncelle</h2>
+<br />
+@using (Html.BeginForm("UpdateEducation", "Education", FormMethod.Post))
+{
+    @Html.HiddenFor(y => y.EducationID, new { @class = "form-control" })
+
+    <div>
+
+        <label>Eğitim Başlığı</label>
+        @Html.TextBoxFor(y => y.Title, new { @class = "form-control" })
+
+    </div>
+    <div>
+        <label>Eğitim Alt Başlığı</label>
+        @Html.TextBoxFor(k => k.SubTitle, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Eğitim Tarihi</label>
+        @Html.TextBoxFor(k => k.EducationDate, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Eğitim Açıklaması</label>
+        @Html.TextBoxFor(k => k.Description, new { @class = "form-control" })
+    </div>
+
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+
+
+}

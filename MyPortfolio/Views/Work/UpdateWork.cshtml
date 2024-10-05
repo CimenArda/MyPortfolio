@@ -1,0 +1,38 @@
+﻿@model MyPortfolio.Models.Work
+
+@{
+    ViewBag.Title = "UpdateWork";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Yetenek Güncelle</h2>
+<br />
+@using (Html.BeginForm("UpdateWork", "Work", FormMethod.Post))
+{
+    @Html.HiddenFor(y => y.WorkID, new { @class = "form-control" })
+    <div>
+        <label>Çalışma Başlığı</label>
+        @Html.TextBoxFor(k => k.Title, new { @class = "form-control" })
+    </div>
+    <div>
+
+        <label>Çalışma Açıklaması</label>
+        @Html.TextBoxFor(y => y.Description, new { @class = "form-control" })
+
+    </div>
+
+    <div>
+        <label>Çalışma Github Yolu</label>
+        @Html.TextBoxFor(k => k.GithubUrl, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Çalışma Resim Yolu</label>
+        @Html.TextBoxFor(k => k.ImageUrl, new { @class = "form-control" })
+    </div>
+
+
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+
+
+}
