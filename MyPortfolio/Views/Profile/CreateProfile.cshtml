@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "CreateProfile";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Profil Ekle</h2>
+<br />
+<form action="/Profile/CreateProfile" method="post">
+
+    <div>
+        <label>Profil Başlığı</label>
+        <input type="text" name="Title" required class="form-control" />
+    </div>
+    <div>
+        <label>Profil Açıklaması</label>
+        <input type="text" required name="Description" class="form-control" />
+    </div>
+    <div>
+        <label>Profil Adresi</label>
+        <input type="text" name="Address" class="form-control" />
+    </div>
+    <div>
+        <label>Profil Emaili</label>
+        <input type="text" name="Email" class="form-control" />
+    </div>
+    <div>
+        <label>Profil Telefon</label>
+        <input type="text" name="PhoneNumber" class="form-control" />
+    </div>
+    <div>
+        <label>Profil Github</label>
+        <input type="text" name="Github" class="form-control" />
+    </div>
+    <div>
+        <label>Profil Image Url</label>
+        <input type="text" name="ImageUrl" class="form-control" />
+    </div>
+    <div>
+        <label>Profil Harita Lokasyonu</label>
+        <input type="text" name="MapLocation" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success">Ekle</button>
+</form>

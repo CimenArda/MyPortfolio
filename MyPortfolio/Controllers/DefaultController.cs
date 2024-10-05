@@ -86,7 +86,7 @@ namespace MyPortfolio.Controllers
 
         public PartialViewResult PartialSkill()
         {
-            var values = context.Skill.ToList();
+            var values = context.Skill.Where(x => x.Status == true).ToList();
 
             return PartialView(values);
         }

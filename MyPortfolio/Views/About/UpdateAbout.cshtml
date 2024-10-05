@@ -1,15 +1,14 @@
-﻿@model MyPortfolio.Models.Work
+﻿@model MyPortfolio.Models.About
 
 @{
-    ViewBag.Title = "UpdateWork";
+    ViewBag.Title = "UpdateAbout";
     Layout = "~/Views/Admin/Index.cshtml";
 }
-
-<h2>Çalışma Güncelle</h2>
+<h2>Hakkımda Güncelle</h2>
 <br />
-@using (Html.BeginForm("UpdateWork", "Work", FormMethod.Post))
+@using (Html.BeginForm("UpdateAbout", "About", FormMethod.Post))
 {
-    @Html.HiddenFor(y => y.WorkID, new { @class = "form-control" })
+    @Html.HiddenFor(y => y.AboutID, new { @class = "form-control" })
     <div>
         <label>Çalışma Başlığı</label>
         @Html.TextBoxFor(k => k.Title, new { @class = "form-control" })
@@ -17,13 +16,8 @@
     <div>
 
         <label>Çalışma Açıklaması</label>
-        @Html.TextBoxFor(y => y.Description, new { @class = "form-control" })
+        @Html.TextBoxFor(y => y.Detail, new { @class = "form-control" })
 
-    </div>
-
-    <div>
-        <label>Çalışma Github Yolu</label>
-        @Html.TextBoxFor(k => k.GithubUrl, new { @class = "form-control" })
     </div>
     <div>
         <label>Çalışma Resim Yolu</label>

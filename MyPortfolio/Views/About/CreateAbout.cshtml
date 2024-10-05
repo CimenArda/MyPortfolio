@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "CreateAbout";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+
+<h2>Hakkımda Ekle</h2>
+<br />
+<form action="/About/CreateAbout" method="post">
+
+    <div>
+        <label>Hakkımda Başlığı</label>
+        <input type="text" name="Title" required class="form-control" />
+    </div>
+    <div>
+        <label>Hakkımda Detaylar</label>
+        <input type="text" required name="Description" class="form-control" />
+    </div>
+
+    <div>
+        <label>Çalışma Resim Yolu</label>
+        <input type="text" name="ImageUrl" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success">Ekle</button>
+</form>

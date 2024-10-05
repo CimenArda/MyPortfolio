@@ -1,0 +1,55 @@
+﻿@model MyPortfolio.Models.Profile
+
+@{
+    ViewBag.Title = "UpdateProfile";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Profil Güncelle</h2>
+<br />
+@using (Html.BeginForm("UpdateProfile", "Profile", FormMethod.Post))
+{
+    @Html.HiddenFor(y => y.ProfileID, new { @class = "form-control" })
+    <div>
+        <label>Profil Başlığı</label>
+        @Html.TextBoxFor(k => k.Title, new { @class = "form-control" })
+    </div>
+    <div>
+
+        <label>Profil Açıklaması</label>
+        @Html.TextBoxFor(y => y.Description, new { @class = "form-control" })
+
+    </div>
+    <div>
+        <label>Profil Adres</label>
+        @Html.TextBoxFor(k => k.Address, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Profil Email</label>
+        @Html.TextBoxFor(k => k.Email, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Profil Telefon</label>
+        @Html.TextBoxFor(k => k.PhoneNumber, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Profil Github</label>
+        @Html.TextBoxFor(k => k.Github, new { @class = "form-control" })
+    </div>
+
+    <div>
+        <label>Profil Resim Yolu</label>
+        @Html.TextBoxFor(k => k.ImageUrl, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Profil Harita Lokasyonu</label>
+        @Html.TextBoxFor(k => k.MapLocation, new { @class = "form-control" })
+    </div>
+
+
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+
+
+}

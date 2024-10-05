@@ -1,25 +1,21 @@
-﻿
+﻿@model List<MyPortfolio.Models.Category>
 @{
-    Layout = null;
+    ViewBag.Title = "CategoryCreate";
+    Layout = "~/Views/Admin/Index.cshtml";
 }
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-<h3>Yeni Kategori Ekleme Alanı</h3>
+<h2>Çalışma Ekle</h2>
+<br />
+<form action="/Category/CreateCategory" method="post">
 
-<div class="container">
+    <div>
+        <label>Kategori Adı</label>
+        <input type="text" name="CategoryName" required class="form-control" />
+    </div>
+    <div>
+        <label>Kategori Durumu</label>
+        <input type="text" required name="CategoryStatus" class="form-control" />
+    </div>
 
-
-
-
-    <label>Kategori Adı</label>
-    <input type="text" class="form-control" />
     <br />
-    <label>Kategori Açıklaması</label>
-    <input type="text" class="form-control" />
-    <br />
-    <label>Kategori Değeri</label>
-    <input type="text" class="form-control" />
-    <br />
-
-    <button class="btn btn-success">Kategoriyi Oluştur</button>
-
-</div>
+    <button type="submit" class="btn btn-success">Ekle</button>
+</form>
